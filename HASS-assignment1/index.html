@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapore Pollutant Standards Index (PSI) Level</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<script>
+
+    function display_data(psi_data) {
+        let data = document.getElementById("data");
+        let status = document.getElementById("status");
+        let update = document.getElementById("update");
+
+        let timestamp = psi_data.items[0].update_timestamp;
+        const date = new Date(timestamp);
+        let date_time = date.toDateString() + " " + date.toLocaleTimeString();
+
+        let headers = ["Metric", "West", "East", "Central", "South", "North"];
+
+        let table_header = `<table class="table table-striped-columns"><tr>`;
+        for(let item of headers) {
+            table_header += `<th>${item}</th>`;
+        }
+        table_header += `</tr>`;
+                                
+        table_content = "";
+        let readings = psi_data.items[0].readings;
+        for(let metric in readings) {
+            table_content += `<tr><td>${metric}</td>`;
+            for(let location in readings[metric]) {
+                table_content += `<td>${readings[metric][location]}</td>`;
+            }
+            table_content += `</tr>`;
+        }
+        table_content += `</table>`;
+       
+        status.innerText = ` (${psi_data.api_info.status})`;
+        update.innerText = date_time;
+        data.innerHTML = table_header + table_content;
+    }
+    
+    async function get_psi_level() {
+        let url = "https://api.data.gov.sg/v1/environment/psi";
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {'Accept': 'application/json'}
+        });
+        
+        const data_psi_level = await response.json();
+        console.log(data_psi_level); 
+        display_data(data_psi_level);
+    }
+    
+    get_psi_level();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<body>
+    <div class="container-fluid text-center">
+        <div class="row">
+            <div class="col">
+                <p class="fs-1">Singapore PSI Level<span id="status"></span></p>
+                <p class="fs-6 fst-italic">Last updated: <span id="update"></span></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="data"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="fs-6 fst-italic">Copyright @ <a href="http://cheinwong.me" target="_blank">cheinwong.me</a></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
