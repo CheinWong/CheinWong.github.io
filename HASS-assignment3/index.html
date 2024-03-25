@@ -36,7 +36,7 @@
                 could potentially depreciate over years. Therefore, it is worth looking into the past data to confirm this
                 hypothesis.
             </span></br></br>
-            <!-- <a class="btn btn-primary" type="button" href="#viz1">Visualization 1</a> -->
+            <button class="btn btn-primary" onclick="ToaPayoh()">Toa Payoh</button>
         </header>
       
         <div id='viz1' class="p-5 mb-3 bg-body-tertiary rounded-3">
@@ -51,14 +51,21 @@
             </div>
             
             <script>
-          
+              
               // set the dimensions and margins of the graph
               const margin = {top: 50, right: 50, bottom: 50, left: 60},
                       width = 460 - margin.left - margin.right,
                       height = 400 - margin.top - margin.bottom;
+              
+              function ToaPayoh() {
+                console.log("Toapayoh");
+                d3.select("#my_dataviz1").clear();
+                render_viz1("data/HDB_Data_TAMPINES.csv");
+                render_viz2("data/HDB_Data_TAMPINES.csv");
+              }
 
-              function render_viz1() {
-                const svg = d3.select("#my_dataviz1")
+              function render_viz1(data_path) {
+                const svg = d3.select("#my_dataviz1")            
                   .append("svg")
                   .attr("width", width + margin.left + margin.right)
                   .attr("height", height + margin.top + margin.bottom)
@@ -90,7 +97,7 @@
                     .text("Value (psf) in ($S)");
               
               //Read the data
-                d3.csv("data/HDB_Data1.csv").then( function(data) {
+                d3.csv(data_path).then( function(data) {
               
                   var div = d3.select("main").append("div")
                     .attr("class", "tooltip")
@@ -98,7 +105,7 @@
 
                   // Add X axis
                   const x = d3.scaleLinear()
-                  .domain([2010, 2026])
+                  .domain([2016, 2026])
                   .range([ 0, width ]);
                   svg.append("g")
                   .attr("transform", `translate(0, ${height})`)
@@ -106,7 +113,7 @@
               
                   // Add Y axis
                   const y = d3.scaleLinear()
-                  .domain([0, 10000])
+                  .domain([2000, 12000])
                   .range([ height, 0]);
                   svg.append("g")
                   .call(d3.axisLeft(y).ticks(10));
@@ -149,16 +156,11 @@
                         .duration('200')
                         .style("opacity", 0);
                     });
-                  
-
-                    
-                     
-                  
-                  
                 })
               }
 
-              function render_viz2() {
+              function render_viz2(data_path) {
+                
                   // append the svg object to the body of the page
                   const svg = d3.select("#my_dataviz2")
                     .append("svg")
@@ -192,7 +194,7 @@
                     .text("Value (psf) in ($S)");
 
                     //Read the data
-                  d3.csv("data/HDB_Data1.csv").then( function(data) {
+                  d3.csv(data_path).then( function(data) {
                     
                     var div = d3.select("main").append("div")
                     .attr("class", "tooltip")
@@ -200,7 +202,7 @@
 
                     // Add X axis
                     const x = d3.scaleLinear()
-                    .domain([66, 50])
+                    .domain([55, 45])
                     .range([ 0, width ]);
                     svg.append("g")
                     .attr("transform", `translate(0, ${height})`)
@@ -208,7 +210,7 @@
                 
                     // Add Y axis
                     const y = d3.scaleLinear()
-                      .domain([0, 10000])
+                      .domain([2000, 12000])
                       .range([ height, 0]);
                       svg.append("g")
                       .call(d3.axisLeft(y).ticks(10));
@@ -253,12 +255,14 @@
                         });
                       })  
               }
-              render_viz1();
-              render_viz2();
+              render_viz1("data/HDB_Data_TPY.csv");
+              render_viz2("data/HDB_Data_TPY.csv");
             </script>
+            Data Source: <a href="https://beta.data.gov.sg/datasets/d_8b84c4ee58e3cfc0ece0d773c8ca6abc/view" target="_blank">data.gov.sg</a></br>
           </div>
         </div>
         <footer class="pt-3 mt-4 text-body-secondary border-top text-center">
+
           Copyright @ <a href="http://cheinwong.me" target="_blank">cheinwong.me</a>
         </footer>
       </div>
