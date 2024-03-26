@@ -35,12 +35,32 @@
                 over supply. However, due to the decreasing of remaining lease over year, the value (psf) of HDB flats 
                 could potentially depreciate over years. Therefore, it is worth looking into the past data to confirm this
                 hypothesis.
-            </span></br></br>
-            <button class="btn btn-primary" onclick="ToaPayoh()">Toa Payoh</button>
+            </span></br>
         </header>
       
         <div id='viz1' class="p-5 mb-3 bg-body-tertiary rounded-3">
           <div class="container-fluid py-1 text-center">
+            <div class="row">
+              <div class="col">
+                By town: 
+                <select id="town" class="town">
+                  <option value="WOODLAND" selected>Woodland</option>
+                  <option value="TPY">Toa Payoh</option>
+                  <option value="TAMPINES">Tampines</option>
+                  <option value="JURONG">Jurong</option>
+                </select>
+                &nbsp&nbsp&nbsp&nbsp&nbsp
+                By Ave: 
+                <select id="street_name" class="street_name">
+                  <option value="" selected></option>
+                  <option value="WOODLAND_AVE_6">Woodland Ave 6</option>
+                  <option value="TPY_NTH">Toa Payoh</option>
+                  <option value="TAMPINES_AVE_8">Tampines</option>
+                  <option value="TEBAN_GDNS_RD">Jurong</option>
+                </select>
+              </br></br></br>
+              </div>
+            </div>
             <div class="row">
               <div class="col">
                 <div id="my_dataviz1"></div>
@@ -53,82 +73,110 @@
             <script>
               
               // set the dimensions and margins of the graph
+              let data_path = "data/HDB_Data_WOODLAND.csv";
+              let xAxis1;
+              let yAxis1;
+              let xAxis2;
+              let yAxis2;
               const margin = {top: 50, right: 50, bottom: 50, left: 60},
-                      width = 460 - margin.left - margin.right,
-                      height = 400 - margin.top - margin.bottom;
+                    width = 460 - margin.left - margin.right,
+                    height = 400 - margin.top - margin.bottom;
               
-              function ToaPayoh() {
-                console.log("Toapayoh");
-                d3.select("#my_dataviz1").clear();
-                render_viz1("data/HDB_Data_TAMPINES.csv");
-                render_viz2("data/HDB_Data_TAMPINES.csv");
-              }
-
-              function render_viz1(data_path) {
-                const svg = d3.select("#my_dataviz1")            
-                  .append("svg")
-                  .attr("width", width + margin.left + margin.right)
-                  .attr("height", height + margin.top + margin.bottom)
-                  .append("g")
-                  .attr("transform", `translate(${margin.left}, ${margin.top})`);
+              const svg1 = d3.select("#my_dataviz1")            
+                .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", `translate(${margin.left}, ${margin.top})`);
+              
+              const svg2 = d3.select("#my_dataviz2")
+                .append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", `translate(${margin.left}, ${margin.top})`);
                   
-                  svg.append("text")
-                    .attr("x", width/2)
-                    .attr("y", -20)
-                    .attr("text-anchor", "middle")
-                    .style("font-size", "18px")
-                    .style("fill", "blue")
-                    .text("Value (psf) vs Year");
+              svg1.append("text")
+                .attr("x", width/2)
+                .attr("y", -20)
+                .attr("text-anchor", "middle")
+                .style("font-size", "18px")
+                .style("fill", "blue")
+                .text("Value (psf) vs Year");
 
-                  svg.append("text")
-                    .attr("transform", "translate(" + (width/2) + " ," + (height + 40) + ")")
-                    .style("text-anchor", "middle")
-                    .style("font-size", "13px")
-                    .style("fill", "blue")
-                    .text("Year");
+              svg1.append("text")
+                .attr("transform", "translate(" + (width/2) + " ," + (height + 40) + ")")
+                .style("text-anchor", "middle")
+                .style("font-size", "13px")
+                .style("fill", "blue")
+                .text("Year");
                   
-                  svg.append("text")
-                    .attr("transform", "rotate(-90)")
-                    .attr("x", -(height/2))
-                    .attr("y", -50)
-                    .style("text-anchor", "middle")
-                    .style("font-size", "13px")
-                    .style("fill", "blue")
-                    .text("Value (psf) in ($S)");
+              svg1.append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("x", -(height/2))
+                .attr("y", -50)
+                .style("text-anchor", "middle")
+                .style("font-size", "13px")
+                .style("fill", "blue")
+                .text("Value (psf) in ($S)");
               
-              //Read the data
-                d3.csv(data_path).then( function(data) {
-              
-                  var div = d3.select("main").append("div")
-                    .attr("class", "tooltip")
-                    .style("opacity", 0);
+              svg2.append("text")
+                .attr("x", width/2)
+                .attr("y", -20)
+                .attr("text-anchor", "middle")
+                .style("font-size", "18px")
+                .style("fill", "blue")
+                .text("Value (psf) vs Remaining Lease");
 
-                  // Add X axis
-                  const x = d3.scaleLinear()
-                  .domain([2016, 2026])
-                  .range([ 0, width ]);
-                  svg.append("g")
+              svg2.append("text")
+                .attr("transform", "translate(" + (width/2) + " ," + (height + 40) + ")")
+                .style("text-anchor", "middle")
+                .style("font-size", "13px")
+                .style("fill", "blue")
+                .text("Remaining Lease (year)");
+              
+              svg2.append("text")
+                .attr("transform", "rotate(-90)")
+                .attr("x", -(height/2))
+                .attr("y", -50)
+                .style("text-anchor", "middle")
+                .style("font-size", "13px")
+                .style("fill", "blue")
+                .text("Value (psf) in ($S)");
+
+
+                                
+              //Read the data for viz 1
+              d3.csv(data_path).then( function(data) {
+                let div = d3.select("main").append("div")
+                  .attr("class", "tooltip")
+                  .style("opacity", 0);
+
+                // Add X axis
+                const x = d3.scaleLinear().domain([2016, 2026]).range([ 0, width ]);
+                
+                xAxis1 = svg1.append("g")
                   .attr("transform", `translate(0, ${height})`)
                   .call(d3.axisBottom(x).ticks(10));
               
-                  // Add Y axis
-                  const y = d3.scaleLinear()
-                  .domain([2000, 12000])
-                  .range([ height, 0]);
-                  svg.append("g")
+                // Add Y axis
+                const y = d3.scaleLinear().domain([2000, 12000]).range([ height, 0]);
+                
+                yAxis1 = svg1.append("g")
                   .call(d3.axisLeft(y).ticks(10));
 
-                  svg.append('g')
-                    .attr('class', 'x axis-grid')
-                    .attr('transform', 'translate(0,' + height + ')')
-                    .style("stroke", "yellow")
-                    .call(d3.axisBottom(x).tickSize(-height).tickFormat('').ticks(10));
-                  svg.append('g')
-                    .attr('class', 'y axis-grid')
-                    .call(d3.axisLeft(y).tickSize(-width).tickFormat('').ticks(10));
+                svg1.append('g')
+                  .attr('class', 'x axis-grid')
+                  .attr('transform', 'translate(0,' + height + ')')
+                  .style("stroke", "yellow")
+                  .call(d3.axisBottom(x).tickSize(-height).tickFormat('').ticks(10));
               
-                  // Add dots
-                  svg.append('g')
+                svg1.append('g')
+                  .attr('class', 'y axis-grid')
+                  .call(d3.axisLeft(y).tickSize(-width).tickFormat('').ticks(10));
+              
+                // Add dots
+                svg1.append('g')
                   .selectAll("dot")
                   .data(data)
                   .join("circle")
@@ -137,130 +185,247 @@
                       .attr("r", 3)
                       .attr("fill", "red")
                   .on('mouseover', function (d, i) {
-                      d3.select(this).transition()
-                        .duration('100')
-                        .attr("r", 5);
-                      div.transition()
-                        .duration(100)
-                        .style("opacity", 1);
-                      div.text("$" + i.resale_price + " @ " + i.month)
-                        .style("left", (event.pageX + 10) + "px")
-                        .style("top", (event.pageY + 10) + "px");
-                    })
+                    d3.select(this).transition()
+                      .duration('100')
+                      .attr("r", 5);
+                    div.transition()
+                      .duration(100)
+                      .style("opacity", 1);
+                    div.text("$" + i.resale_price + " @ " + i.month)
+                      .style("left", (event.pageX + 10) + "px")
+                      .style("top", (event.pageY + 10) + "px");
+                  })
+                  .on('mouseout', function (d, i) {
+                    d3.select(this).transition()
+                      .duration('200')
+                      .attr("r", 3);
+                    div.transition()
+                      .duration('200')
+                      .style("opacity", 0);
+                  });   
+              })
+
+              //Read the data for viz 2
+              d3.csv(data_path).then( function(data) {
+                    
+                let div = d3.select("main").append("div")
+                  .attr("class", "tooltip")
+                  .style("opacity", 0);
+
+                // Add X axis
+                const x = d3.scaleLinear().domain([95, 45]).range([ 0, width ]);
+                
+                xAxis2 = svg2.append("g")
+                  .attr("transform", `translate(0, ${height})`)
+                  .call(d3.axisBottom(x).ticks(10));
+                
+                // Add Y axis
+                const y = d3.scaleLinear().domain([2000, 12000]).range([ height, 0]);
+                
+                yAxis2 = svg2.append("g")
+                  .call(d3.axisLeft(y).ticks(10));
+
+                svg2.append('g')
+                  .attr('class', 'x axis-grid')
+                  .attr('transform', 'translate(0,' + height + ')')
+                  .style("stroke", "yellow")
+                  .call(d3.axisBottom(x).tickSize(-height).tickFormat('').ticks(10));
+                
+                svg2.append('g')
+                  .attr('class', 'y axis-grid')
+                  .call(d3.axisLeft(y).tickSize(-width).tickFormat('').ticks(10));
+                  
+                    // Add dots
+                svg2.append('g')
+                  .selectAll("dot")
+                  .data(data)
+                  .join("circle")
+                      .attr("cx", function (d) { return x((d.remaining_lease).substring(0,2)); } )
+                      .attr("cy", function (d) { return y(d.resale_price / d.floor_area_sqm); } )
+                      .attr("r", 3)
+                      .style("fill", "limegreen")
+                  .on('mouseover', function (d, i) {
+                    d3.select(this).transition()
+                      .duration('100')
+                      .attr("r", 5);
+                    div.transition()
+                      .duration(100)
+                      .style("opacity", 1);
+                    div.text(i.month + ":" + "$" + i.resale_price + " @ " + i.remaining_lease)
+                      .style("left", (event.pageX + 10) + "px")
+                      .style("top", (event.pageY + 10) + "px");
+                  })
 
                   .on('mouseout', function (d, i) {
-                      d3.select(this).transition()
-                        .duration('200')
-                        .attr("r", 3);
-                      div.transition()
-                        .duration('200')
-                        .style("opacity", 0);
-                    });
-                })
-              }
+                    d3.select(this).transition()
+                      .duration('200')
+                      .attr("r", 3);
+                    div.transition()
+                      .duration('200')
+                      .style("opacity", 0);
+                  });
+              })
 
-              function render_viz2(data_path) {
-                
-                  // append the svg object to the body of the page
-                  const svg = d3.select("#my_dataviz2")
-                    .append("svg")
-                    .attr("width", width + margin.left + margin.right)
-                    .attr("height", height + margin.top + margin.bottom)
-                    .append("g")
-                    .attr("transform", `translate(${margin.left}, ${margin.top})`);
-              
-                  svg.append("text")
-                    .attr("x", width/2)
-                    .attr("y", -20)
-                    .attr("text-anchor", "middle")
-                    .style("font-size", "18px")
-                    .style("fill", "blue")
-                    .text("Value (psf) vs Remaining Lease");
+              d3.select(".town")
+                .on("change", function() {
 
-                  svg.append("text")
-                    .attr("transform", "translate(" + (width/2) + " ," + (height + 40) + ")")
-                    .style("text-anchor", "middle")
-                    .style("font-size", "13px")
-                    .style("fill", "blue")
-                    .text("Remaining Lease (year)");
-                  
-                  svg.append("text")
-                    .attr("transform", "rotate(-90)")
-                    .attr("x", -(height/2))
-                    .attr("y", -50)
-                    .style("text-anchor", "middle")
-                    .style("font-size", "13px")
-                    .style("fill", "blue")
-                    .text("Value (psf) in ($S)");
-
-                    //Read the data
-                  d3.csv(data_path).then( function(data) {
-                    
-                    var div = d3.select("main").append("div")
+                  let div = d3.select("main").append("div")
                     .attr("class", "tooltip")
                     .style("opacity", 0);
 
-                    // Add X axis
-                    const x = d3.scaleLinear()
-                    .domain([55, 45])
-                    .range([ 0, width ]);
-                    svg.append("g")
-                    .attr("transform", `translate(0, ${height})`)
-                    .call(d3.axisBottom(x).ticks(10));
-                
-                    // Add Y axis
-                    const y = d3.scaleLinear()
-                      .domain([2000, 12000])
-                      .range([ height, 0]);
-                      svg.append("g")
-                      .call(d3.axisLeft(y).ticks(10));
+                  let ele_town = document.getElementById("town");
+                  let town_value = ele_town.options[ele_town.selectedIndex].value;
 
-                    svg.append('g')
-                      .attr('class', 'x axis-grid')
-                      .attr('transform', 'translate(0,' + height + ')')
-                      .style("stroke", "yellow")
-                      .call(d3.axisBottom(x).tickSize(-height).tickFormat('').ticks(10));
-                    svg.append('g')
-                      .attr('class', 'y axis-grid')
-                      .call(d3.axisLeft(y).tickSize(-width).tickFormat('').ticks(10));
+                  console.log("data/HDB_Data_" + town_value + ".csv");
                   
+                  //Update data for viz 1
+                  d3.csv("data/HDB_Data_" + town_value + ".csv").then( function(data) {
+                    
+                    // Add X axis
+                    const x = d3.scaleLinear().domain([2016, 2026]).range([ 0, width ]);
+              
+                    // Add Y axis
+                    const y = d3.scaleLinear().domain([2000, 12000]).range([ height, 0]);
+              
                     // Add dots
-                    svg.append('g')
-                      .selectAll("dot")
+                    svg1.selectAll("circle")// change the x axis
                       .data(data)
                       .join("circle")
-                          .attr("cx", function (d) { return x((d.remaining_lease).substring(0,2)); } )
-                          .attr("cy", function (d) { return y(d.resale_price / d.floor_area_sqm); } )
-                          .attr("r", 3)
-                          .style("fill", "limegreen")
-                      .on('mouseover', function (d, i) {
-                        d3.select(this).transition()
-                          .duration('100')
-                          .attr("r", 5);
-                        div.transition()
-                          .duration(100)
-                          .style("opacity", 1);
-                        div.text("$" + i.resale_price + " @ " + i.remaining_lease)
-                          .style("left", (event.pageX + 10) + "px")
-                          .style("top", (event.pageY + 10) + "px");
-                      })
+                      .transition()
+                      .duration(1000)
+                      .attr("cx", function (d) { return x((d.month).substring(0,4)); } )
+                      .attr("cy", function (d) { return y(d.resale_price / d.floor_area_sqm); } )
+                      .attr("r", 3)
+                      .attr("fill", "red")
+                  })
 
-                      .on('mouseout', function (d, i) {
-                          d3.select(this).transition()
-                            .duration('200')
-                            .attr("r", 3);
-                          div.transition()
-                            .duration('200')
-                            .style("opacity", 0);
-                        });
-                      })  
-              }
-              render_viz1("data/HDB_Data_TPY.csv");
-              render_viz2("data/HDB_Data_TPY.csv");
+                  //Update data for viz 2
+                  d3.csv("data/HDB_Data_" + town_value + ".csv").then( function(data) {
+                    // console.log(town_value);
+                    let x_max = 0;
+                    let x_min = 0;
+                    if(town_value == "WOODLAND") {
+                      x_max = 95;
+                      x_min = 45;
+                    }
+                    if(town_value == "TPY") {
+                      x_max = 95;
+                      x_min = 45;
+                    }
+                    if(town_value == "TAMPINES") {
+                      x_max = 95;
+                      x_min = 45;
+                    }
+                    if(town_value == "JURONG") {
+                      x_max = 95;
+                      x_min = 45;
+                    }
+                    // Add X axis
+                    const x = d3.scaleLinear().domain([x_max, x_min]).range([ 0, width ]);
+                      
+                    // Add Y axis
+                    const y = d3.scaleLinear().domain([2000, 12000]).range([ height, 0]);
+                      
+                    // Add dots
+                    svg2.selectAll("circle")// change the x axis
+                      .data(data)
+                      .join("circle")
+                      .transition()
+                      .duration(1000)
+                      .attr("cx", function (d) { return x((d.remaining_lease).substring(0,2)); } )
+                      .attr("cy", function (d) { return y(d.resale_price / d.floor_area_sqm); } )
+                      .attr("r", 3)
+                      .attr("fill", "limegreen")
+                          
+                    xAxis2
+                      .transition()
+                      .duration(500)
+                      .call(d3.axisBottom(x).ticks(10));
+
+                  })
+                })
+
+              d3.select(".street_name")
+                .on("change", function() {
+                  let ele_town = document.getElementById("town");
+                  let town_value = ele_town.options[ele_town.selectedIndex].value;
+                  let ele_street_name = document.getElementById("street_name");
+                  let street_name_value = ele_street_name.options[ele_street_name.selectedIndex].value;
+
+                  console.log("data/HDB_Data_" + street_name_value + ".csv");
+
+                  //Update data for viz 1
+                  d3.csv("data/HDB_Data_" + street_name_value + ".csv").then( function(data) {
+                    // Add X axis
+                    const x = d3.scaleLinear().domain([2016, 2026]).range([ 0, width ]);
+                
+                    // Add Y axis
+                    const y = d3.scaleLinear().domain([2000, 12000]).range([ height, 0]);
+                
+                    // Add dots
+                    svg1.selectAll("circle")// change the x axis
+                      .data(data)
+                      .join("circle")
+                      .transition()
+                      .duration(1000)
+                      .attr("cx", function (d) { return x((d.month).substring(0,4)); } )
+                      .attr("cy", function (d) { return y(d.resale_price / d.floor_area_sqm); } )
+                      .attr("r", 3)
+                      .attr("fill", "red")
+                  })
+
+                  //Update data for viz 2
+                  d3.csv("data/HDB_Data_" + street_name_value + ".csv").then( function(data) {
+                    console.log(street_name_value);
+                    let x_max = 0;
+                    let x_min = 0;
+                    if(street_name_value == "WOODLAND_AVE_6") {
+                      x_max = 95;
+                      x_min = 70;
+                    }
+                    if(street_name_value == "TPY_NTH") {
+                      x_max = 55;
+                      x_min = 45;
+                    }
+                    if(street_name_value == "TAMPINES_AVE_8") {
+                      x_max = 95;
+                      x_min = 65;
+                    }
+                    if(street_name_value == "TEBAN_GDNS_RD") {
+                      x_max = 95;
+                      x_min = 55;
+                    }
+                    // Add X axis
+                    const x = d3.scaleLinear().domain([x_max, x_min]).range([ 0, width ]);
+                
+                    // Add Y axis
+                    const y = d3.scaleLinear().domain([2000, 12000]).range([ height, 0]);
+                
+                    // Add dots
+                    svg2.selectAll("circle")// change the x axis
+                      .data(data)
+                      .join("circle")
+                      .transition()
+                      .duration(1000)
+                      .attr("cx", function (d) { return x((d.remaining_lease).substring(0,2)); } )
+                      .attr("cy", function (d) { return y(d.resale_price / d.floor_area_sqm); } )
+                      .attr("r", 3)
+                      .attr("fill", "limegreen")
+                    
+                    xAxis2
+                      .transition()
+                      .duration(500)
+                      .call(d3.axisBottom(x).ticks(10));
+                  })
+                })
             </script>
             Data Source: <a href="https://beta.data.gov.sg/datasets/d_8b84c4ee58e3cfc0ece0d773c8ca6abc/view" target="_blank">data.gov.sg</a></br>
           </div>
         </div>
+        <footer class="pt-3 mt-4 text-body-secondary border-top text-center">
+
+          Conclusion: 
+        </footer>
         <footer class="pt-3 mt-4 text-body-secondary border-top text-center">
 
           Copyright @ <a href="http://cheinwong.me" target="_blank">cheinwong.me</a>
