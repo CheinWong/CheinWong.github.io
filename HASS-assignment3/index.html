@@ -29,9 +29,9 @@
       <div class="container py-4">
         <header class="pb-3 mb-4 border-bottom text-center">
             <span class="fs-1">Assignment 3 - Tabular Data Visualization</span></br></br>
-            <span class="fs-3">Hypothesis: The value (psf) of HDB flats are appreciating over years.</span></br></br>
-            <span class="fs-7">
-                Background: The value (psf) of HDB flats generally appreciates over years due to the increase of demand
+            <span class="fs-6"><strong>Hypothesis:</strong> The value (psf) of HDB flats are appreciating over years.</span></br></br>
+            <span class="fs-6">
+              <strong>Background:</strong> The value (psf) of HDB flats generally appreciates over years due to the increase of demand
                 over supply. However, due to the decreasing of remaining lease over year, the value (psf) of HDB flats 
                 could potentially depreciate over years. Therefore, it is worth looking into the past data to confirm this
                 hypothesis.
@@ -42,7 +42,7 @@
           <div class="container-fluid py-1 text-center">
             <div class="row">
               <div class="col">
-                By town: 
+                Data viewing by town: 
                 <select id="town" class="town">
                   <option value="WOODLAND" selected>Woodland</option>
                   <option value="TPY">Toa Payoh</option>
@@ -50,7 +50,7 @@
                   <option value="JURONG">Jurong</option>
                 </select>
                 &nbsp&nbsp&nbsp&nbsp&nbsp
-                By Ave: 
+                Data viweing by avenue: 
                 <select id="street_name" class="street_name">
                   <option value="" selected></option>
                   <option value="WOODLAND_AVE_6">Woodland Ave 6</option>
@@ -101,14 +101,12 @@
                 .attr("y", -20)
                 .attr("text-anchor", "middle")
                 .style("font-size", "18px")
-                .style("fill", "blue")
                 .text("Value (psf) vs Year");
 
               svg1.append("text")
                 .attr("transform", "translate(" + (width/2) + " ," + (height + 40) + ")")
                 .style("text-anchor", "middle")
                 .style("font-size", "13px")
-                .style("fill", "blue")
                 .text("Year");
                   
               svg1.append("text")
@@ -117,7 +115,6 @@
                 .attr("y", -50)
                 .style("text-anchor", "middle")
                 .style("font-size", "13px")
-                .style("fill", "blue")
                 .text("Value (psf) in ($S)");
               
               svg2.append("text")
@@ -125,14 +122,12 @@
                 .attr("y", -20)
                 .attr("text-anchor", "middle")
                 .style("font-size", "18px")
-                .style("fill", "blue")
                 .text("Value (psf) vs Remaining Lease");
 
               svg2.append("text")
                 .attr("transform", "translate(" + (width/2) + " ," + (height + 40) + ")")
                 .style("text-anchor", "middle")
                 .style("font-size", "13px")
-                .style("fill", "blue")
                 .text("Remaining Lease (year)");
               
               svg2.append("text")
@@ -141,7 +136,6 @@
                 .attr("y", -50)
                 .style("text-anchor", "middle")
                 .style("font-size", "13px")
-                .style("fill", "blue")
                 .text("Value (psf) in ($S)");
 
 
@@ -423,8 +417,11 @@
           </div>
         </div>
         <footer class="pt-3 mt-4 text-body-secondary border-top text-center">
-
-          Conclusion: 
+          <strong>Conclusion:</strong> The value (psf) of HDB flats generally appreciates over years in both macro (by town) and micro (by avenue) view.
+          It is observed the value (psf) of HDB flats depreciates over the remaining leasein the macro view,. However, it shows otherwise in the
+          micro view. Therefore, it is conclusive that the value (psf) of HDB flats appreciates over years and the remaining lease shows little  or no impact
+          to the value. <br><br>
+          <strong>Note:</strong> This study does not show the impact of the value (psf) when the remaining lease is less than or equal to 48 years.
         </footer>
         <footer class="pt-3 mt-4 text-body-secondary border-top text-center">
 
