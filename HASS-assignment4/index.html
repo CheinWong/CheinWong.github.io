@@ -71,13 +71,6 @@
                 
                 let geopath = d3.geoPath().projection(projection);
 
-                const areaExtent = d3.extent(mapData, d => d.area);
-                const minScale = 1;
-                const maxScale = 2;
-                const areaScale = d3.scaleLinear()
-                    .domain(areaExtent)
-                    .range([maxScale, minScale]);
-
                 svg.append("g")
                     .attr("id", "districts")
                     .selectAll("path")
@@ -96,9 +89,6 @@
                     })
                     .style("opacity", 1)
                     .on("mouseover", function(event, d) {
-                        const centroid = geopath.centroid(d);
-                        const [x, y] = centroid;
-                        const scale = areaScale(d.area);
 
                         d3.selectAll(".Subzone")
                             .transition()
@@ -111,23 +101,15 @@
                             .style("opacity", 1)
                             .style("stroke", "white");
                         
-                        d3.select(event.currentTarget)
-                            .classed("highlighted", true)
-                            .attr("transform", `translate(${x * (1 - scale)}, ${y * (1 - scale)}) scale(${scale}, ${scale})`)
-                            .raise(); 
-                        
                         d3.select("#tooltip")
                             .style("left", (event.pageX + 20) + "px")
                             .style("top", (event.pageY - 20) + "px")
-                            .transition().duration(400)
+                            .transition().duration(500)
                             .style("opacity", 1)
                             .style("display", "block")
                             .text('Total population of '+ d.properties.Name + ': ' + d.popdata);
                     })
                     .on("mouseout", function(event, d) {
-                        d3.select(event.currentTarget)
-                            .classed("highlighted", false)
-                            .attr("transform", "translate(0, 0) scale(1, 1)");
 
                         d3.selectAll(".Subzone")
                             .transition()
@@ -135,8 +117,9 @@
                             .style("opacity", 1)
                             .style("stroke", "white");
                         
-                        d3.select(".tooltip")
-                            .transition().duration(300)
+                        d3.select("#tooltip")
+                            .transition().duration(500)
+                            .style("display", "block")
                             .style("opacity", 0);
                     })     
             })
