@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Project</title>
+</head>
+<body>
+    <script>
+        async function get_twitter_data() {
+            let url = "https://api.twitter.com/2/tweets/counts/recent?query=taiwan";
+            const token = 'AAAAAAAAAAAAAAAAAAAAAJCrtAEAAAAAt4cyTUBDEXhioWGK5GfyLb5QnsA%3Dh6pZlYkqLD2djESfNxZ8xqw4X8BfjilV0AxGiFZqiIng2fJWLZ'
+            const response = await fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                    'Authorization': `Bearer ${token}`,}
+            });
+            
+            const data = await response.json();
+            console.log(data); 
+        
+        }
+        get_twitter_data();
+    </script>
+    
+</body>
+</html>
