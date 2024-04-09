@@ -5,15 +5,166 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Assignment 5 - Project Proposal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </head>
   <body>
+    <script>
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
     <main>
       <div class="container py-4">
         <header class="pb-3 mb-4 border-bottom text-center">
             <span class="fs-1">Assignment 5 - Project Proposal</span></br></br>
         </header>
+        <span class="fw-semibold">Sypnosis:</span><br>
+        <p> Social network analysis has made significant strides in visualization techniques over the years. However, there are still some areas that could benefit from further development. This project aims to develop a dashboard to provide data visualization on social network data. The dashboard will be focusing on dynamic visualization, user interactivity and engagement and data streaming from multiple social media platform such as twitter X, reddit, facebook, instagram and etc.</p>
 
-        To be updated
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                <span class="fw-semibold">What is the data?</span>
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+              <div class="accordion-body">
+                The primary data will be coming from twitter X. Data streaming from Reddit, Facebook and Instagram will be considered at the later stage.</br></br>
+
+                <div class="container-fluid">
+                  <div class="row text-center">
+                    <div class="col">
+                      <img src="images/twitterXLogo.jpg" class="img-fluid  p-5">
+                    </div>
+                    <div class="col">
+                      <img src="images/redditLogo.png" class="img-fluid pt-5">
+                    </div>
+                    <div class="col">
+                      <img src="images/facebookLogo.png" class="img-fluid p-5">
+                    </div>
+                    <div class="col">
+                      <img src="images/instagramLogo.png" class="img-fluid p-5">
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                <span class="fw-semibold">What are the insights from the data?</span>
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-3">
+                        <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample1" aria-expanded="false" aria-controls="collapseWidthExample1">
+                          Trends, Patterns & Audience Insights
+                        </button>
+                    </div>
+                    <div class="col">
+                      <div style="min-height: 120px;">
+                        <div class="collapse collapse-horizontal" id="collapseWidthExample1">
+                          <div class="card card-body">
+                            Analyzing social media data provides the insights on trends and patterns in user behavior, interests, and preferences. By monitoring hashtags, keywords, and topics that are trending, businesses can stay updated on popular conversations and adapt their strategies accordingly.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <p>
+                        <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample2" aria-expanded="false" aria-controls="collapseWidthExample2">
+                          Sentiment Analysis & Crisis Management
+                        </button>
+                      </p>
+                    </div>
+                    <div class="col">
+                      <div style="min-height: 120px;">
+                        <div class="collapse collapse-horizontal" id="collapseWidthExample2">
+                          <div class="card card-body">
+                            Sentiment analysis techniques can be applied to social media data to determine the overall sentiment (positive, negative, or neutral) associated with a particular topic, brand, or event. This insight can help businesses gauge public opinion, monitor brand reputation, and identify potential PR crises.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-3">
+                      <p>
+                        <button class="btn btn-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample3" aria-expanded="false" aria-controls="collapseWidthExample3">
+                          Customer Feedback & Content Optimization
+                        </button>
+                      </p>
+                    </div>
+                    <div class="col">
+                      <div style="min-height: 120px;">
+                        <div class="collapse collapse-horizontal" id="collapseWidthExample3">
+                          <div class="card card-body">
+                            Analyzing social media engagement metrics such as likes, shares, comments, and click-through rates can help businesses understand which types of content resonate best with their audience and provide valuable insights into customer satisfaction levels, pain points, and areas for improvement. This insight can inform content creation strategies and optimize content for maximum impact.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                <span class="fw-semibold">What are the Visualization Idioms?</span>
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+              
+              <div class="accordion-body">
+                <div id="carouselExampleCaptions" class="carousel slide w-75 mx-auto">
+                  <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  </div>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="images/wordcloud.png" class="d-block w-100" alt="Word Cloud" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="images/networkgraph.png" class="d-block w-100" alt="Network Graph">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="images/arcdiagram.png" class="d-block w-100" alt="Arc Diagram">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="images/geospatial.png" class="d-block w-100" alt="Geospatial">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="images/temporalnetwork.png" class="d-block w-100" alt="Temporal Network">
+                      
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next text-dark" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
       
        
         <footer class="pt-3 mt-4 text-body-secondary border-top text-center">
@@ -21,7 +172,6 @@
         </footer>
       </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
   </body>
 </html>
