@@ -1,0 +1,14 @@
+[
+  {
+    "label": "Positive",
+    "value": 0.98
+  },
+  {
+    "label": "Neutral",
+    "value": 0
+  },
+  {
+    "label": "Negative",
+    "value": 0.02
+  }
+]

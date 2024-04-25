@@ -1,0 +1,711 @@
+[
+  {
+    "name": "openAIED",
+    "username": "openAIED",
+    "public_metrics": {
+      "followers_count": 267,
+      "following_count": 100,
+      "tweet_count": 179,
+      "listed_count": 7,
+      "like_count": 90
+    },
+    "id": "973573772178542593",
+    "location": "Milton Keynes, England"
+  },
+  {
+    "name": "Antony",
+    "username": "dicarv",
+    "public_metrics": {
+      "followers_count": 290,
+      "following_count": 2280,
+      "tweet_count": 4163,
+      "listed_count": 15,
+      "like_count": 5594
+    },
+    "id": "62570350"
+  },
+  {
+    "name": "Yo Ehara",
+    "username": "EharaLab",
+    "public_metrics": {
+      "followers_count": 19,
+      "following_count": 137,
+      "tweet_count": 133,
+      "listed_count": 1,
+      "like_count": 239
+    },
+    "id": "1380711170261184514",
+    "location": "Tokyo, Japan"
+  },
+  {
+    "name": "Adelson de Araujo",
+    "username": "adelsondearaujo",
+    "public_metrics": {
+      "followers_count": 114,
+      "following_count": 347,
+      "tweet_count": 48,
+      "listed_count": 2,
+      "like_count": 771
+    },
+    "id": "1304054252701188102",
+    "location": "Enschede, Nederland"
+  },
+  {
+    "name": "Rafael Ferreira Mello",
+    "username": "flmrafael",
+    "public_metrics": {
+      "followers_count": 148,
+      "following_count": 242,
+      "tweet_count": 59,
+      "listed_count": 1,
+      "like_count": 424
+    },
+    "id": "3407235719"
+  },
+  {
+    "name": "koko ",
+    "username": "PurwokoHaryadiS",
+    "public_metrics": {
+      "followers_count": 509,
+      "following_count": 780,
+      "tweet_count": 10155,
+      "listed_count": 0,
+      "like_count": 16874
+    },
+    "id": "98253210",
+    "location": "Central Java, Indonesia"
+  },
+  {
+    "name": "Anuj Kumar Sirohi",
+    "username": "anujsirohiamu",
+    "public_metrics": {
+      "followers_count": 33,
+      "following_count": 668,
+      "tweet_count": 40,
+      "listed_count": 0,
+      "like_count": 2574
+    },
+    "id": "211112317"
+  },
+  {
+    "name": "Davide Taibi",
+    "username": "dataibi",
+    "public_metrics": {
+      "followers_count": 216,
+      "following_count": 182,
+      "tweet_count": 555,
+      "listed_count": 11,
+      "like_count": 1171
+    },
+    "id": "2274780686"
+  },
+  {
+    "name": "Yo Ehara",
+    "username": "yo_ehara",
+    "public_metrics": {
+      "followers_count": 4248,
+      "following_count": 3430,
+      "tweet_count": 78616,
+      "listed_count": 88,
+      "like_count": 133443
+    },
+    "id": "742895102499033089",
+    "location": "東京都小金井市"
+  },
+  {
+    "name": "Max van Haastrecht",
+    "username": "MaxvHaastrecht",
+    "public_metrics": {
+      "followers_count": 158,
+      "following_count": 137,
+      "tweet_count": 446,
+      "listed_count": 0,
+      "like_count": 4864
+    },
+    "id": "1453674533915877377",
+    "location": "Utrecht, NL"
+  },
+  {
+    "name": "Barbara Anna Zielonka (she/her/hers)",
+    "username": "bar_zie",
+    "public_metrics": {
+      "followers_count": 15588,
+      "following_count": 16800,
+      "tweet_count": 366615,
+      "listed_count": 2676,
+      "like_count": 252965
+    },
+    "id": "2231464708",
+    "location": "Norway"
+  },
+  {
+    "name": "Mario",
+    "username": "Mario_JU",
+    "public_metrics": {
+      "followers_count": 109,
+      "following_count": 524,
+      "tweet_count": 14884,
+      "listed_count": 2,
+      "like_count": 17694
+    },
+    "id": "1087475971354169354",
+    "location": "Italia"
+  },
+  {
+    "name": "Eddy Calderón",
+    "username": "eddyrdcg",
+    "public_metrics": {
+      "followers_count": 40,
+      "following_count": 305,
+      "tweet_count": 172,
+      "listed_count": 0,
+      "like_count": 1325
+    },
+    "id": "846712222294441984"
+  },
+  {
+    "name": "محمد الشهري",
+    "username": "alshehry_m",
+    "public_metrics": {
+      "followers_count": 2161,
+      "following_count": 319,
+      "tweet_count": 4479,
+      "listed_count": 9,
+      "like_count": 392
+    },
+    "id": "245024532"
+  },
+  {
+    "name": "Daniele Di Mitri",
+    "username": "dimstudi0",
+    "public_metrics": {
+      "followers_count": 1342,
+      "following_count": 1653,
+      "tweet_count": 4346,
+      "listed_count": 38,
+      "like_count": 3889
+    },
+    "id": "18282433",
+    "location": "🇪🇺"
+  },
+  {
+    "name": "Prof Allison Littlejohn",
+    "username": "allisonl",
+    "public_metrics": {
+      "followers_count": 4636,
+      "following_count": 1409,
+      "tweet_count": 12704,
+      "listed_count": 135,
+      "like_count": 14212
+    },
+    "id": "10664262",
+    "location": "UK"
+  },
+  {
+    "name": "Barbara Anna Zielonka (she/her/hers)",
+    "id": "2231464708",
+    "public_metrics": {
+      "followers_count": 15588,
+      "following_count": 16800,
+      "tweet_count": 366615,
+      "listed_count": 2676,
+      "like_count": 252965
+    },
+    "location": "Norway",
+    "username": "bar_zie"
+  },
+  {
+    "name": "Dr. T. H. Son Pham",
+    "id": "850039125109424128",
+    "public_metrics": {
+      "followers_count": 8,
+      "following_count": 58,
+      "tweet_count": 69,
+      "listed_count": 0,
+      "like_count": 87
+    },
+    "username": "AiedPheno"
+  },
+  {
+    "location": "東京都小金井市",
+    "id": "742895102499033089",
+    "username": "yo_ehara",
+    "public_metrics": {
+      "followers_count": 4248,
+      "following_count": 3430,
+      "tweet_count": 78616,
+      "listed_count": 88,
+      "like_count": 133443
+    },
+    "name": "Yo Ehara"
+  },
+  {
+    "location": "Finland",
+    "id": "308276452",
+    "username": "im_prashant_rai",
+    "public_metrics": {
+      "followers_count": 617,
+      "following_count": 1221,
+      "tweet_count": 3634,
+      "listed_count": 1,
+      "like_count": 53487
+    },
+    "name": "Prashant Rai"
+  },
+  {
+    "location": "New York, New York",
+    "id": "1247567683048091655",
+    "username": "kmoretticompsci",
+    "public_metrics": {
+      "followers_count": 302,
+      "following_count": 702,
+      "tweet_count": 1732,
+      "listed_count": 2,
+      "like_count": 1387
+    },
+    "name": "Katherine Moretti"
+  },
+  {
+    "id": "850039125109424128",
+    "username": "AiedPheno",
+    "public_metrics": {
+      "followers_count": 8,
+      "following_count": 58,
+      "tweet_count": 69,
+      "listed_count": 0,
+      "like_count": 87
+    },
+    "name": "Dr. T. H. Son Pham"
+  },
+  {
+    "location": "Melbourne Australia",
+    "username": "jimmie_yan",
+    "public_metrics": {
+      "followers_count": 375,
+      "following_count": 516,
+      "tweet_count": 168,
+      "listed_count": 3,
+      "like_count": 755
+    },
+    "id": "1385040372946984965",
+    "name": "Lixiang (Jimmie) Yan"
+  },
+  {
+    "username": "flmrafael",
+    "public_metrics": {
+      "followers_count": 148,
+      "following_count": 242,
+      "tweet_count": 59,
+      "listed_count": 1,
+      "like_count": 424
+    },
+    "id": "3407235719",
+    "name": "Rafael Ferreira Mello"
+  },
+  {
+    "location": "São Paulo",
+    "username": "leolongo",
+    "public_metrics": {
+      "followers_count": 1083,
+      "following_count": 721,
+      "tweet_count": 3441,
+      "listed_count": 27,
+      "like_count": 3365
+    },
+    "id": "13796392",
+    "name": "Leonardo Longo"
+  },
+  {
+    "username": "Judithmarcelo28",
+    "public_metrics": {
+      "followers_count": 6,
+      "following_count": 58,
+      "tweet_count": 0,
+      "listed_count": 0,
+      "like_count": 236
+    },
+    "id": "1574350637386588161",
+    "name": "Judith"
+  },
+  {
+    "location": "Cagliari, Italy",
+    "username": "mirkomarras",
+    "public_metrics": {
+      "followers_count": 264,
+      "following_count": 480,
+      "tweet_count": 501,
+      "listed_count": 0,
+      "like_count": 1076
+    },
+    "id": "715306704762761216",
+    "name": "Mirko Marras"
+  },
+  {
+    "location": "Norway",
+    "username": "TUMohdKhalil",
+    "public_metrics": {
+      "followers_count": 789,
+      "following_count": 570,
+      "tweet_count": 1367,
+      "listed_count": 23,
+      "like_count": 2438
+    },
+    "id": "3092344515",
+    "name": "Mohammad Khalil"
+  },
+  {
+    "location": "東京都小金井市",
+    "username": "yo_ehara",
+    "public_metrics": {
+      "followers_count": 4248,
+      "following_count": 3430,
+      "tweet_count": 78616,
+      "listed_count": 88,
+      "like_count": 133443
+    },
+    "id": "742895102499033089",
+    "name": "Yo Ehara"
+  },
+  {
+    "username": "FengqiL28105",
+    "id": "1736247561751601152",
+    "public_metrics": {
+      "followers_count": 34,
+      "following_count": 76,
+      "tweet_count": 401,
+      "listed_count": 0,
+      "like_count": 3033
+    },
+    "name": "jack li"
+  },
+  {
+    "username": "DZapataRiv",
+    "id": "752670187128709120",
+    "location": "Educational Testing Service ",
+    "public_metrics": {
+      "followers_count": 35,
+      "following_count": 268,
+      "tweet_count": 10,
+      "listed_count": 0,
+      "like_count": 165
+    },
+    "name": "Diego Zapata-Rivera"
+  },
+  {
+    "username": "SinaRismanchian",
+    "id": "1624207235407822848",
+    "public_metrics": {
+      "followers_count": 94,
+      "following_count": 248,
+      "tweet_count": 54,
+      "listed_count": 0,
+      "like_count": 360
+    },
+    "name": "Sina Rismanchian"
+  },
+  {
+    "username": "Isalinegg",
+    "id": "1137298589447839744",
+    "public_metrics": {
+      "followers_count": 8,
+      "following_count": 20,
+      "tweet_count": 54,
+      "listed_count": 0,
+      "like_count": 2321
+    },
+    "name": "Isaline"
+  },
+  {
+    "username": "AngusGLChen",
+    "id": "2983438302",
+    "location": "Melbourne, Australia",
+    "public_metrics": {
+      "followers_count": 300,
+      "following_count": 368,
+      "tweet_count": 158,
+      "listed_count": 7,
+      "like_count": 880
+    },
+    "name": "Guanliang Chen"
+  },
+  {
+    "username": "yo_ehara",
+    "id": "742895102499033089",
+    "location": "東京都小金井市",
+    "public_metrics": {
+      "followers_count": 4248,
+      "following_count": 3430,
+      "tweet_count": 78616,
+      "listed_count": 88,
+      "like_count": 133443
+    },
+    "name": "Yo Ehara"
+  },
+  {
+    "username": "pogorsky",
+    "id": "17725607",
+    "location": "United Kingdom",
+    "public_metrics": {
+      "followers_count": 265,
+      "following_count": 378,
+      "tweet_count": 170,
+      "listed_count": 15,
+      "like_count": 2220
+    },
+    "name": "Eduard Pogorskiy"
+  },
+  {
+    "username": "CSEDM",
+    "id": "1654213794866888707",
+    "location": "Raleigh, NC",
+    "public_metrics": {
+      "followers_count": 36,
+      "following_count": 293,
+      "tweet_count": 69,
+      "listed_count": 0,
+      "like_count": 149
+    },
+    "name": "Computer Science Educational Data Mining SIG"
+  },
+  {
+    "username": "AndyNguyenXAIED",
+    "id": "1226461519518588931",
+    "location": "Oulu, Finland",
+    "public_metrics": {
+      "followers_count": 371,
+      "following_count": 618,
+      "tweet_count": 283,
+      "listed_count": 1,
+      "like_count": 854
+    },
+    "name": "Andy Nguyen"
+  },
+  {
+    "name": "Muhamedrahim Kursabaev",
+    "location": "Almaty, Kazakhstan",
+    "public_metrics": {
+      "followers_count": 23,
+      "following_count": 271,
+      "tweet_count": 41,
+      "listed_count": 1,
+      "like_count": 9
+    },
+    "username": "kursabaev1961",
+    "id": "3245770225"
+  },
+  {
+    "name": "Job Oyebisi",
+    "public_metrics": {
+      "followers_count": 829,
+      "following_count": 873,
+      "tweet_count": 22717,
+      "listed_count": 17,
+      "like_count": 35470
+    },
+    "username": "joboyebisi",
+    "id": "2152527037"
+  },
+  {
+    "name": "Juan C. Tarazona",
+    "location": "Perú",
+    "public_metrics": {
+      "followers_count": 80,
+      "following_count": 1319,
+      "tweet_count": 521,
+      "listed_count": 3,
+      "like_count": 639
+    },
+    "username": "jtavid",
+    "id": "2962278479"
+  },
+  {
+    "name": "Edutab Africa",
+    "location": "Nairobi & Kitale, Kenya",
+    "public_metrics": {
+      "followers_count": 582,
+      "following_count": 752,
+      "tweet_count": 766,
+      "listed_count": 5,
+      "like_count": 1265
+    },
+    "username": "Edutab_Africa",
+    "id": "1262405622198394881"
+  },
+  {
+    "name": "株式会社インフォザイン",
+    "location": "東京都台東区池之端1丁目2-18NDK池之端ビル4F",
+    "public_metrics": {
+      "followers_count": 26,
+      "following_count": 62,
+      "tweet_count": 254,
+      "listed_count": 0,
+      "like_count": 1051
+    },
+    "username": "Infosign_Inc",
+    "id": "959179771"
+  },
+  {
+    "name": "Yong Zheng",
+    "location": "Chicago",
+    "public_metrics": {
+      "followers_count": 104,
+      "following_count": 86,
+      "tweet_count": 208,
+      "listed_count": 4,
+      "like_count": 311
+    },
+    "username": "yongzhengme",
+    "id": "3852363197"
+  },
+  {
+    "name": "Katherine Moretti",
+    "location": "New York, New York",
+    "public_metrics": {
+      "followers_count": 302,
+      "following_count": 702,
+      "tweet_count": 1732,
+      "listed_count": 2,
+      "like_count": 1387
+    },
+    "username": "kmoretticompsci",
+    "id": "1247567683048091655"
+  },
+  {
+    "name": "Dr. Sambit Praharaj",
+    "location": "CAREER Advice SUBSCRIBE 👇👉",
+    "public_metrics": {
+      "followers_count": 901,
+      "following_count": 1734,
+      "tweet_count": 7242,
+      "listed_count": 20,
+      "like_count": 22899
+    },
+    "username": "SambitPhD",
+    "id": "899720953"
+  },
+  {
+    "name": "Dr. T. H. Son Pham",
+    "public_metrics": {
+      "followers_count": 8,
+      "following_count": 58,
+      "tweet_count": 69,
+      "listed_count": 0,
+      "like_count": 87
+    },
+    "username": "AiedPheno",
+    "id": "850039125109424128"
+  },
+  {
+    "name": "Kyosuke Takami",
+    "location": "日本 東京",
+    "public_metrics": {
+      "followers_count": 186,
+      "following_count": 604,
+      "tweet_count": 1182,
+      "listed_count": 11,
+      "like_count": 2700
+    },
+    "username": "kyoro2483",
+    "id": "565234962"
+  },
+  {
+    "name": "ilmara monteverde",
+    "public_metrics": {
+      "followers_count": 48,
+      "following_count": 37,
+      "tweet_count": 108,
+      "listed_count": 11,
+      "like_count": 5135
+    },
+    "username": "ilmaramartins",
+    "id": "198361231"
+  },
+  {
+    "public_metrics": {
+      "followers_count": 7,
+      "following_count": 48,
+      "tweet_count": 0,
+      "listed_count": 0,
+      "like_count": 2
+    },
+    "name": "Ghobrini Amine",
+    "username": "GhobriniAm2081",
+    "id": "1701365306407505920"
+  },
+  {
+    "public_metrics": {
+      "followers_count": 14,
+      "following_count": 27,
+      "tweet_count": 42,
+      "listed_count": 0,
+      "like_count": 64
+    },
+    "name": "AIEdTEFL",
+    "username": "AIEDTEFL",
+    "id": "1739735942334697472"
+  },
+  {
+    "public_metrics": {
+      "followers_count": 8,
+      "following_count": 58,
+      "tweet_count": 69,
+      "listed_count": 0,
+      "like_count": 87
+    },
+    "name": "Dr. T. H. Son Pham",
+    "username": "AiedPheno",
+    "id": "850039125109424128"
+  },
+  {
+    "location": "London, England",
+    "public_metrics": {
+      "followers_count": 1344,
+      "following_count": 51,
+      "tweet_count": 228,
+      "listed_count": 25,
+      "like_count": 113
+    },
+    "name": "AIED",
+    "username": "AIEDconf",
+    "id": "909653689228341248"
+  },
+  {
+    "location": "New York, New York",
+    "public_metrics": {
+      "followers_count": 302,
+      "following_count": 702,
+      "tweet_count": 1732,
+      "listed_count": 2,
+      "like_count": 1387
+    },
+    "name": "Katherine Moretti",
+    "username": "kmoretticompsci",
+    "id": "1247567683048091655"
+  },
+  {
+    "public_metrics": {
+      "followers_count": 15588,
+      "following_count": 16800,
+      "tweet_count": 366615,
+      "listed_count": 2676,
+      "like_count": 252965
+    },
+    "name": "Barbara Anna Zielonka (she/her/hers)",
+    "location": "Norway",
+    "id": "2231464708",
+    "username": "bar_zie"
+  },
+  {
+    "public_metrics": {
+      "followers_count": 114,
+      "following_count": 347,
+      "tweet_count": 48,
+      "listed_count": 2,
+      "like_count": 771
+    },
+    "name": "Adelson de Araujo",
+    "location": "Enschede, Nederland",
+    "id": "1304054252701188102",
+    "username": "adelsondearaujo"
+  }
+]

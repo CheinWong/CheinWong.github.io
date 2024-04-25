@@ -1,0 +1,23 @@
+{
+  "name": "DataVizProjectFinal",
+  "description": "Social Network Dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node index.mjs"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "d3": "^7.9.0",
+    "d3-cloud": "^1.2.7",
+    "ejs-mate": "^4.0.0",
+    "express": "^4.19.2",
+    "sentiment": "^5.0.2",
+    "socket.io": "^4.7.5",
+    "twitter-api-v2": "^1.16.1"
+  }
+}
